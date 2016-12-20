@@ -1,5 +1,5 @@
 {
-  "name": "pdfinfo",
+  "name": "azure-pdfinfo",
   "version": "0.0.3",
   "description": "simple api for reading pdf meta info via xpdf's pdfinfo(1)",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ecarter/node-pdfinfo"
+    "url": "https://github.com/Aserus/node-azure-pdfinfo"
   },
   "dependencies": {},
   "devDependencies": {
@@ -26,6 +26,7 @@
     "postscript"
   ],
   "author": "Erin Carter",
+  "editor": "Warus <http://firebyte.ru/>",
   "license": "MIT",
   "readmeFilename": "README.md"
 }
