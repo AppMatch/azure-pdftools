@@ -1,4 +1,4 @@
-# node-pdfinfo
+# azure-pdfinfo
 
 A simple api for reading pdf meta info via [xpdf's](http://www.foolabs.com/xpdf) `pdfinfo(1)`.
 
@@ -10,13 +10,13 @@ A simple api for reading pdf meta info via [xpdf's](http://www.foolabs.com/xpdf)
 
 ## Install
 
-    $ git clone https://github.com/ecarter/node-pdfinfo.git
-    $ cd node-pdfinfo
+    $ git clone https://github.com/Aserus/node-azure-pdfinfo.git
+    $ cd azure-pdfinfo
     $ npm install
 
 ## Example
 
-    var PDF = require('pdfinfo');
+    var PDF = require('azure-pdfinfo');
 
     var pdf = PDF('test/pdf/basic.pdf');
 
@@ -30,4 +30,3 @@ You can also pass a readable stream into the first argument instead of a file.
 ## License
 
 MIT
-
