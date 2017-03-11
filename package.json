@@ -6,9 +6,6 @@
   "directories": {
     "test": "test"
   },
-  "scripts": {
-    "test": "make test"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Aserus/node-azure-pdfinfo"
