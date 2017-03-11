@@ -1,6 +1,6 @@
 {
   "name": "azure-pdfinfo",
-  "version": "0.0.4",
+  "version": "0.4.0",
   "description": "simple api for reading pdf meta info via xpdf's pdfinfo(1)",
   "main": "index.js",
   "directories": {
