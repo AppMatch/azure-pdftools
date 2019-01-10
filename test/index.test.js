@@ -1,11 +1,11 @@
 
-var fs = require('fs');
-var PDF = require('..');
+const fs = require('fs');
+const tools = require('..');
 
-describe('#PDF', function(){
+describe('#tools', function(){
 
   it('should return title', function(done){
-    var pdf = PDF(__dirname + '/pdf/basic.pdf');
+    const pdf = tools(__dirname + '/pdf/basic.pdf');
 
     pdf.exec(function(err, meta){
       if (err) return done(err);
@@ -15,7 +15,7 @@ describe('#PDF', function(){
   })
 
   it('should return pages', function(done){
-    var pdf = PDF(__dirname + '/pdf/pages.pdf');
+    const pdf = tools(__dirname + '/pdf/pages.pdf');
 
     pdf.exec(function(err, meta){
       if (err) return done(err);
@@ -25,7 +25,7 @@ describe('#PDF', function(){
   })
 
   it('should return tagged', function(done){
-    var pdf = PDF(__dirname + '/pdf/pages.pdf');
+    const pdf = tools(__dirname + '/pdf/pages.pdf');
 
     pdf.exec(function(err, meta){
       if (err) return done(err);
@@ -34,8 +34,8 @@ describe('#PDF', function(){
     })
   })
 
-  it('should throw error when a file is not a PDF', function(done){
-    var pdf = PDF(__dirname + '/pdf/dummy.txt');
+  it('should throw error when a file is not a tools', function(done){
+    const pdf = tools(__dirname + '/pdf/dummy.txt');
 
     pdf.exec(function(err, meta){
       err.should.be.instanceof(Error);
@@ -43,11 +43,10 @@ describe('#PDF', function(){
     })
   })
 
-  it('should not crash when a file is not a PDF', function(done){
-    var pdf = PDF(__dirname + '/pdf/dummy.txt');
+  it('should not crash when a file is not a tools', function(done){
+    const pdf = tools(__dirname + '/pdf/dummy.txt');
 
     pdf.errors = false;
-
     pdf.exec(function(err, meta){
       if (err) return done(err);
       meta.should.be.a.Object;
@@ -56,8 +55,8 @@ describe('#PDF', function(){
   })
 
   it('should return title from stream', function(done){
-    var stream = fs.createReadStream(__dirname + '/pdf/basic.pdf');
-    var pdf = PDF(stream);
+    const stream = fs.createReadStream(__dirname + '/pdf/basic.pdf');
+    const pdf = tools(stream);
 
     pdf.exec(function(err, meta){
       if (err) return done(err);
