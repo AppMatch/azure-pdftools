@@ -1,14 +1,14 @@
 {
-  "name": "azure-pdfinfo",
-  "version": "0.4.3",
-  "description": "simple api for reading pdf meta info via xpdf's pdfinfo(1)",
+  "name": "azure-pdftools",
+  "version": "0.0.1",
+  "description": "simple api for using mutools in azure functions",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Aserus/node-azure-pdfinfo"
+    "url": "https://github.com/AppMatch/azure-pdftools"
   },
   "dependencies": {},
   "devDependencies": {
@@ -18,11 +18,11 @@
   "keywords": [
     "pdf",
     "xpdf",
-    "pdfinfo",
-    "meta",
+    "mutool",
+    "azure functions",
     "postscript"
   ],
-  "author": "Warus <http://firebyte.ru/>",
+  "author": "Jernej",
   "license": "MIT",
   "readmeFilename": "README.md"
 }
