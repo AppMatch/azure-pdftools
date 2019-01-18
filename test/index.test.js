@@ -5,13 +5,13 @@ describe('#mutool', () => {
 
   it('should return title', (done) => {
     const filePath = `${__dirname}/pdf/SundanceTermite.pdf`;
-    const Mutool = mutool(['info', filePath]);
+    const command = mutool(`info ${filePath}`);
 
-    Mutool.exec((err, meta) => {
-      if (err) return done(err);
-
+    command.exec().then(meta => {
       meta.pages.should.equal(9);
       done();
+    }).catch(err => {
+      done(err);
     });
   });
 
@@ -20,16 +20,16 @@ describe('#mutool', () => {
     const startPage = 1;
     const endPage = 1;
     const filePath = `${__dirname}\\pdf\\cupertino_usd.pdf`;
-    const outputFile = `${__dirname}\\pdf\\x-p${startPage}--%d.png`;
+    const outputFile = `${__dirname}\\png\\cupertino_usd-p${startPage}--%d.png`;
     const resolution = 288;
 
-    const Mutool = mutool(['draw', `-r ${resolution} -c gray -F png -o ${outputFile}`, filePath, `${startPage}-${endPage}`]);
+    const command = mutool(`draw -r ${resolution} -c gray -o ${outputFile} ${filePath} ${startPage}-${endPage}`);
 
-    Mutool.exec((err) => {
-      console.error("png generate exec err", err)
-      if (err) return done(err);
-
+    command.exec().then(data => {
       done();
+    }).catch(err => {
+      console.error(err);
+      done(err);
     });
   });
 });
