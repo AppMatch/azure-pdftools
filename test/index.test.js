@@ -32,4 +32,27 @@ describe('#mutool', () => {
       done(err);
     });
   });
+
+  it('should split the given pdf into multiple (per page) pdfs', async () => {
+
+    const pageCount = 7;
+    const filePath = `${__dirname}\\pdf\\SundanceTermite.pdf`;
+    const work = [];
+
+    try {
+
+      for (let page = 1; page <= pageCount; page++) { 
+        let outputFile = `${__dirname}\\pdfs\\SundanceTermite-p${page}.pdf`;
+        let command = mutool(`clean -l ${filePath} ${outputFile} ${page}`);
+  
+        work.push(command.exec());
+      }
+
+      await Promise.all(work);
+
+      return;
+    } catch (error) {
+      throw error;
+    }
+  });
 });
