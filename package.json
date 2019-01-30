@@ -10,7 +10,9 @@
     "type": "git",
     "url": "https://github.com/AppMatch/azure-pdftools"
   },
-  "dependencies": {},
+  "dependencies": {
+    "fs-extra": "^7.0.1"
+  },
   "devDependencies": {
     "should": "3.3.1"
   },

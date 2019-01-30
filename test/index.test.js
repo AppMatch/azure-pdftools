@@ -1,11 +1,14 @@
-const should = require('should');
-const mutool = require('..');
+const should = require('should'),
+      mutool = require('..'),
+      path = require('path');
 
 describe('#mutool', () => {
 
   it('should return title', (done) => {
-    const filePath = `${__dirname}/pdf/SundanceTermite.pdf`;
-    const Mutool = mutool();
+    const filePath = path.join(__dirname, '/pdf/SundanceTermite.pdf');
+    const Mutool = mutool({
+      tempPath: 'D:/local/Temp'
+    });
 
     Mutool.exec(`info ${filePath}`).then(meta => {
       meta.pages.should.equal(9);
@@ -22,7 +25,9 @@ describe('#mutool', () => {
     const filePath = `${__dirname}\\pdf\\cupertino_usd.pdf`;
     const outputFile = `${__dirname}\\png\\cupertino_usd-p${startPage}--%d.png`;
     const resolution = 288;
-    const Mutool = mutool();
+    const Mutool = mutool({
+      tempPath: 'D:/local/Temp'
+    });
 
     Mutool.exec(`draw -r ${resolution} -c gray -o ${outputFile} ${filePath} ${startPage}-${endPage}`).then(data => {
       done();
@@ -37,7 +42,9 @@ describe('#mutool', () => {
     const pageCount = 7;
     const filePath = `${__dirname}\\pdf\\SundanceTermite.pdf`;
     const work = [];
-    const Mutool = mutool();
+    const Mutool = mutool({
+      tempPath: 'D:/local/Temp'
+    });
 
     try {
 
