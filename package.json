@@ -1,6 +1,6 @@
 {
   "name": "azure-pdftools",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "description": "simple api for using mutools in azure functions",
   "main": "index.js",
   "directories": {
